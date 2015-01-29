@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
     passportLocalMongoose = require('passport-local-mongoose'),
     crypto = require('crypto'),
     jwt = require('jwt-simple'),
-    tokenSecret = 'put-a-$Ecr3t-h3re';
+    tokenSecret = 'cobjet-dev-token';
 
 var Token = new Schema({
     token: {type: String},

@@ -7,12 +7,13 @@ var LocalStrategy = require('passport-local').Strategy;
 var config = require(__dirname + '/config/config.js');
 
 var app = express();
-var expressPort = 8888;
+var appPort = 8888;
 
-app.set('port', process.env.PORT || expressPort);
+app.set('port', process.env.PORT || appPort);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('view options', { layout: false });
+
 app.use(express.logger());
 app.use(express.bodyParser());
 app.use(express.methodOverride());

@@ -12,5 +12,5 @@ module.exports = {
      */
     'ttl': 3600000, //1 hour
     'resetTokenExpiresMinutes': 20, //20 minutes later
-    'mongo_url': 'mongodb://localhost/passport_local_jwt_mongoose' // looks like mongodb://<user>:<pass>@mongo.onmodulus.net:27017/Mikha4ot
+    'mongo_url': 'mongodb://localhost:27017/cobjet' // looks like mongodb://<user>:<pass>@mongolab.com:27017/dev
 };
