@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:roblevintennis/passport-api-tokens.git"
+    "url": "https://cobjet@github.com/cobjet-lessions/authentication.git"
   },
   "keywords": [
     "nodejs",
@@ -33,6 +33,12 @@
     "jwt-simple": "~0.1.0",
     "ejs": "~0.8.5",
     "underscore": "~1.5.2",
-    "crypto": "0.0.3"
+    "crypto": "0.0.3",
+    "morgan": "1.3.*",
+    "method-override":"*",
+    "body-parser": "1.8",
+    "errorhandler": "*",
+    "express-session": "*",
+    "multer": "0.1.*"
   }
 }

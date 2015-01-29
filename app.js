@@ -5,6 +5,11 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var config = require(__dirname + '/config/config.js');
+var logger = require('morgan');
+var methodOverride = require('method-override');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var session = require('express-session');
 
 var app = express();
 var appPort = 8888;
@@ -14,9 +19,19 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('view options', { layout: false });
 
-app.use(express.logger());
-app.use(express.bodyParser());
-app.use(express.methodOverride());
+app.use(logger());
+app.use(methodOverride());
+app.use(session({ resave: true, saveUninitialized: true,
+                               secret: 'cobjet-secret-144' }));
+// parse application/json
+app.use(bodyParser.json());
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// parse multipart/form-data
+app.use(multer());
+
 app.use(passport.initialize());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
